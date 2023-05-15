@@ -1,0 +1,145 @@
+@media (max-width: 900px){
+.times {
+    font-size: 40px;
+    margin: 0 auto;
+}
+}
+
+@media (max-width: 768px) {
+    .alex, .kate {
+        max-height: 60px;
+        font-size: 54px;
+    }
+
+    .grad {
+        display: none;
+    }
+
+    .wedding, .date_time {
+        font-size: 28px;
+    }
+
+    .times {
+        font-size: 40px;
+        margin: 0 auto;
+    }
+
+    .rings {
+        width: 350px;
+    }
+
+    .description {
+        
+        text-align: center;
+    }
+
+    .square img {
+        width: 80%;
+    }
+
+    .ellipse {
+        width: 33%;
+        height: 33%;
+    }
+
+    .ellipses {
+        margin-top: 30%;
+    }
+
+    .dress_codes {
+        margin: 0 auto;
+    }
+
+    .text_dresses {
+        width: 100%;
+    }
+
+    .text_dress {
+       margin: 0 auto;
+       text-align: center;
+    }
+    #map {
+        width: 245px;
+        height: 243px;
+        border-radius: 30px;
+        margin: 5 auto;
+    }
+    .border_map {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+
+/* IPhone 7  etc */
+@media (max-width: 376px) {
+    .alex, .kate {
+        max-height: 45px;
+        font-size: 40px;
+    }
+
+    .rings {
+        width: 70%;
+    }
+
+    .wedding, .date_time {
+        max-height: 30px;
+        font-size: 26px;
+    }
+
+    .times {
+        max-height: 40px;
+        font-size: 30px;
+    }
+
+    .text_dress {
+        width: 100%;
+        font-size: 35px;
+        max-height: 60px;
+    }
+
+    .text_dresses {
+        width: 80%;
+    }
+
+    .description {
+        font-size: 18px;
+        margin: 0 auto;
+        text-align: center;
+        
+    }
+}
+
+/* IPhone 5 etc */
+@media (max-width: 321px) { 
+    .alex, .kate {
+        font-size: 36px;
+    }
+
+    .wedding, .date_time {
+        font-size: 20px;
+    }
+
+    .rings {
+        width: 250px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .text_dress {
+        width: 100%;
+        font-size: 30px;
+        max-height: 60px;
+    }
+
+    .text_dresses {
+        width: 80%;
+    }
+
+    .description {
+        font-size: 16px;
+        margin: 0 auto;
+        text-align: center;
+        
+    }
+}

@@ -1,0 +1,192 @@
+@import url("fonts/stylesheet.css");
+@import url('https://fonts.cdnfonts.com/css/dihjauti-2');
+
+body {
+    background-image: url(png/background.png);
+    font-family: 'Gilroy', 'Dihjauti', sans-serif;
+}
+
+.container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* svg градиентовой полоски */
+.grad {
+    width: 100%;
+    height: 20%;
+}
+/* .grad-xs {
+    display: none;
+} */
+/* Блок с текстом наверху страницы */
+.text {
+    position: relative;
+}
+
+/* Блок с текстом "Приглашаем ... " */
+.wedding {
+    width: 100%;
+    max-width: 457px;
+    height: 100%;
+    max-height: 46px;
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 38px;
+    text-align: center;
+    color: #001F38;
+}
+
+/* Блок с текстом " Александр " */
+.alex {
+    width: 100%;
+    max-width: 500px;
+    height: 100%;
+    max-height: 125px;
+    font-family: 'Dihjauti';
+    font-style: italic;
+    font-size: 78px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #001F38;
+}
+
+/* Блок с текстом " Екатерина " */
+.kate {
+    width: 100%;
+    max-width: 700px;
+    height: 100%;
+    max-height: 101px;
+    font-family: 'Dihjauti';
+    font-style: italic;
+    font-size: 78px;
+    text-align: left;
+    text-transform: uppercase;
+    
+    color: #001F38;
+}
+
+/* Блок с текстом " 29 июля " */
+.date_time {
+    width: 100%;
+    max-width: 233px;
+    height: 100%;
+    max-height: 70px;
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 38px;
+    text-align: right;
+    color: #001F38;
+}
+
+/* svg кольца */
+.rings {
+    position: relative;
+
+}
+
+/* Блок с текстом " Расписание " */
+.times {
+    position: relative;
+    width: 100%;
+    max-width: 291px;
+    height: 100%;
+    max-height: 50px;
+    font-family: 'Dihjauti';
+    font-style: italic;
+    font-size: 58px;
+    text-align: center;
+    color: #001F38;
+}
+
+/* Блоки с текстом для дресс-кода */
+.dress_codes { 
+    width: 100%;
+    max-width: 1400px;
+    position: relative;
+    margin-top: 15%;
+}
+
+.description {
+    position: absolute;
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: right;
+    color: #001F38;
+}
+
+.text_dress {
+    position: relative;
+    font-family: 'Dihjauti';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 58px;
+    line-height: 93px;
+    text-align: right;
+    color: #001F38;
+}
+.border_map {
+	width: 1020px;
+	height: 370px;
+    position: absolute;
+    margin: 0 auto;
+    pointer-events: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+#map {
+	width: 1008px;
+	height: 359px;
+    position: absolute;
+	border-radius: 60px;
+    overflow: hidden;
+    margin: 10 auto;
+    left: 0;
+    right: 0;
+}
+
+
+
+.adress {
+    width: 100%;
+}
+.text_adress {
+    position: relative;
+    width: 154px;
+    height: 93px;
+    
+    font-family: 'Dihjauti';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 58px;
+    line-height: 93px;
+    margin: 0 auto;
+
+    text-align: center;
+    
+    color: #001F38;
+}
+.text_almaz {
+    position: relative;
+    width: 1003px;
+    max-height: 71px;
+    height: 100%;
+    margin: 0 auto;
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+    
+    text-align: center;
+    
+    color: #001F38;
+}
