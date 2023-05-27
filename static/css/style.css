@@ -1,0 +1,319 @@
+@import url("http://fonts.googleapis.com/css?family=Roboto");
+@import url('https://fonts.cdnfonts.com/css/dihjauti-2');
+body {
+    background-image: url(/static/png/background.png);
+    font-family:'Roboto', 'Dihjauti', sans-serif;
+}
+
+.container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    
+}
+
+/* svg градиентовой полоски */
+.grad {
+    width: 100%;
+    height: 300px;
+}
+/* .grad-xs {
+    display: none;
+} */
+/* Блок с текстом наверху страницы */
+.text {
+    position: relative;
+}
+
+/* Блок с текстом "Приглашаем ... " */
+.wedding {
+    width: 100%;
+    max-width: 457px;
+    height: 100%;
+    max-height: 46px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 38px;
+    text-align: center;
+    color: #001F38;
+}
+
+/* Блок с текстом " Александр " */
+.alex {
+    width: 100%;
+    max-width: 500px;
+    height: 100%;
+    max-height: 125px;
+    font-family: 'Dihjauti';
+    font-style: italic;
+    font-size: 78px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #001F38;
+}
+
+/* Блок с текстом " Екатерина " */
+.kate {
+    width: 100%;
+    max-width: 700px;
+    height: 100%;
+    max-height: 101px;
+    font-family: 'Dihjauti';
+    font-style: italic;
+    font-size: 78px;
+    text-align: left;
+    text-transform: uppercase;
+    
+    color: #001F38;
+}
+
+/* Блок с текстом " 29 июля " */
+.date_time {
+    width: 100%;
+    max-width: 260px;
+    height: 100%;
+    max-height: 70px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 38px;
+    text-align: right;
+    color: #001F38;
+}
+
+/* svg кольца */
+.rings {
+    position: relative;
+
+}
+
+/* Блок с текстом " Расписание " */
+.times {
+    position: relative;
+    width: 100%;
+    max-width: 291px;
+    height: 100%;
+    max-height: 50px;
+    font-family: 'Dihjauti';
+    font-style: italic;
+    font-size: 58px;
+    text-align: center;
+    color: #001F38;
+}
+
+/* Блоки с текстом для дресс-кода */
+.dress_codes { 
+    width: 100%;
+    max-width: 1400px;
+    position: relative;
+    margin-top: 15%;
+}
+
+.description {
+    position: absolute;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: right;
+    color: #001F38;
+}
+
+.text_dress {
+    position: relative;
+    font-family: 'Dihjauti';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 58px;
+    line-height: 93px;
+    text-align: right;
+    color: #001F38;
+}
+/* Блок "Карта" */
+.border_map {
+	width: 1020px;
+	height: 400px;
+    position: absolute;
+    margin: 0 auto;
+    pointer-events: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+#map {
+	width: 1008px;
+	height: 380px;
+    position: absolute;
+	border-radius: 60px;
+    overflow: hidden;
+    margin: auto;
+    left: 0;
+    right: 0;
+}
+
+
+/* Блок "Адрес" */
+.adress {
+    width: 100%;
+}
+.text_adress {
+    position: relative;
+    width: 154px;
+    height: 93px;
+    
+    font-family: 'Dihjauti';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 58px;
+    line-height: 93px;
+    margin: 0 auto;
+
+    text-align: center;
+    
+    color: #001F38;
+}
+.text_almaz {
+    position: relative;
+    width: 1003px;
+    max-height: 71px;
+    height: 100%;
+    margin: 0 auto;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+    
+    text-align: center;
+    
+    color: #001F38;
+}
+
+/* Блок "Идея для подарка" */
+.idea_gift {
+    width: 100%;
+    height: 606px;
+    margin-top: 40%;
+}
+.convert {
+    width: 666px;
+    position: relative;
+    margin: 0 auto;
+}
+.text_idea{
+    width: 463px;
+    height: 93px;
+    font-family: 'Dihjauti';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 58px;
+    line-height: 93px;
+
+    color: #001F38;
+}
+/* Блок "Регистрация" */
+.registration {
+    width: 100%;
+
+}
+.text_registration {
+    font-family: 'Dihjauti';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 77px;
+    color: #001F38;
+    text-align: center;
+}
+.text_registration_desc {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;    
+    text-align: center;
+    color: #001F38;
+}
+.registration_forms {
+    width: 100%;
+    height: 100%;
+}
+.registration_form {
+    width: 1114px;
+    /* height: 90%; */
+    background: #FFFFFF;
+    box-shadow: 0px 100px 191px rgba(2, 3, 41, 0.07), 
+                0px 38.4311px 94.4393px rgba(2, 3, 41, 0.0492964), 
+                0px 13.2695px 54.0148px rgba(2, 3, 41, 0.0405744), 
+                0px 1.03756px 29.7275px rgba(2, 3, 41, 0.0336338), 
+                0px -3.8249px 14.3389px rgba(2, 3, 41, 0.0262803), 
+                0px -3.73261px 4.92918px rgba(2, 3, 41, 0.0165487);
+    border-radius: 50px;
+    padding: 60px 100px;
+    margin: 0 auto;
+}   
+.form_input {
+    box-sizing: border-box;
+    position: absolute;
+    width: 934px;
+    height: 76px;
+    border: 1px solid rgba(8, 0, 39, 0.15);
+    border-radius: 50px;
+    padding: 0 20px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+    color: rgba(8, 0, 39, 0.25);
+}
+.form_input:hover {
+    background-color: #EBEBEB;
+}
+.form_input:checked{
+    border: 1px solid rgba(8, 0, 39, 0.15);
+}
+.form_group {
+    position: relative;
+    margin-bottom: 100px;
+    height: 10px;
+}
+.button_form {
+    background: linear-gradient(90deg, #001F38 0%, #1E9AFF 52.33%, #001F38 100%);
+    border-radius: 100px;
+    color: #FFFFFF;
+    width: 312px;
+    height: 65px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 1000;
+    font-size: 24px;
+    line-height: 31px;    
+    text-transform: uppercase;
+    
+}
+.button_div {
+    width: 312px;
+    height: 65px;
+    position: relative;
+    margin: 0 auto;
+}
+.button_form:hover{
+    background: linear-gradient(90deg, #001F38 0%, #3C7EB4 52.33%, #001F38 100%);
+}
+
+.invalid {
+    color: #ff6666;
+
+}
+.js-close {
+    display: none;
+}
+
+::-webkit-input-placeholder {color:rgba(8, 0, 39, 0.25);}
+::-moz-placeholder          {color:rgba(8, 0, 39, 0.25);}
+:-moz-placeholder           {color:rgba(8, 0, 39, 0.25);}
+:-ms-input-placeholder      {color:rgba(8, 0, 39, 0.25);}

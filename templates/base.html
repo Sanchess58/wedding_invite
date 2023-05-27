@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+      <link href="{{ url_for('static', filename='/css/style.css') }}" rel="stylesheet">
+      <link href="{{ url_for('static', filename='/css/adaptive.css') }}" rel="stylesheet">
+      <script src="https://api-maps.yandex.ru/2.1/?apikey=18bb1161-8cca-430e-990f-1ed504a448df&lang=ru_RU" type="text/javascript"></script>
+      <script src="/static/js/map.js"></script>
+      <script src="/static/js/button.js"></script>
+      <script src="/static/js/form.js"></script>
+      <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>{% block title %}{% endblock title %}</title>
+</head>
+
+<body>
+  <script>
+    AOS.init({duration: 1500,});
+  </script>
+    {% block content %}{% endblock content %}
+</body>
+</html>

@@ -1,0 +1,121 @@
+<html lang="ru">
+
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+      <link rel="stylesheet" href="/static/css/style.css">
+      <link rel="stylesheet" href="/static/css/adaptive.css">
+      <script src="https://api-maps.yandex.ru/2.1/?apikey=18bb1161-8cca-430e-990f-1ed504a448df&lang=ru_RU" type="text/javascript"></script>
+      <script src="/static/js/map.js"></script>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Приглашение</title>
+
+  </head>
+
+  <body>
+
+      <div class="container">
+
+        <div class ="grad">
+          <picture>
+            <!-- <source srcset="svg/gradient-xs.svg" media="(max-width: 415px)"> Когда экран будет меньше 415px, будет подгружено это изображение -->
+            <img src="/static/svg/gradient.svg" class="grad-xl" alt="Полоска">
+          </picture>
+        </div>
+
+        <!--Блок "Текст приглашения на свадьбу"-->
+        <div class="row justify-content-center">
+              <div class="text col-lg-6">
+                  <div class ="wedding">Приглашение на свадьбу</div> 
+                  <div class="alex">Александр</div>
+                  <div class="kate">& Екатерина</div>
+                  <div class="date_time">29 июля 2023</div>
+              </div>
+              <div class="rings col-lg-6 gy-6">
+                  <img src="/static/svg/rings.svg" class="img-fluid" alt="Кольца">
+              </div>
+        </div>
+
+        <!--Блок "Расписание"-->
+            <div class="times">Расписание</div>
+              <div class="row justify-content-center gy-md-3">
+                <div class="square col-md-6 col-lg-4">
+                  <img src="/static/svg/welcome.svg"  alt="welcome">
+                </div>
+                <div class="square col-md-6 col-lg-4">
+                  <img src="/static/svg/registration.svg"  alt="регистрация">
+                </div>
+                <div class="square col-md-6 col-lg-4">
+                  <img src="/static/svg/banket.svg"  alt="банкет">
+                </div>
+              </div> 
+
+              <!--Блок "Дресс-код"-->
+              <div class="row dress_codes justify-content-center">
+                  <div class=" text_dresses col-4 order-lg-last justify-content-center">
+                    <p class="text_dress" > Дресс-код </p>
+                      <p class="description "> Просим гостей поддержать общую цветовую гамму и подобрать наряды в пастельных тонах </p>
+                  </div>
+                  <div class="row ellipses col-lg-8 col-md-12 justify-content-center" >
+                    <div class="ellipse col-lg-4 ">
+                      <img src="/static/svg/orange.svg"  class="img-fluid" alt="оранжевый круг">
+                    </div>
+                    <div class="ellipse col-lg-4 ">
+                      <img src="/static/svg/blue.svg" class="img-fluid" alt="голубой круг">
+                    </div>
+                    <div class="ellipse col-lg-4 ">
+                      <img src="/static/svg/purple.svg" class="img-fluid" alt="фиолетовый круг">
+                    </div>
+                  </div>    
+              </div>
+
+              <!--Блок "Адрес"-->
+              <div class="adress ">
+                <p class="text_adress justify-content-center">Адрес</p>
+                <p class="text_almaz justify-content-center">Банкетный зал «Алмаз-холл», г. Пенза, ул. Бородина, 1а (по улице Тернопольской)</p>
+                <div id="map">
+                </div>
+                <div class="border_map ">
+                  <picture>
+                    <source srcset="/static/svg/border_map_xs.svg" media="(max-width: 768px)">
+                    <img src="/static/svg/map.svg" alt="карта">
+                </picture>
+                </div>
+              </div>
+              
+              <!--Блок "Идея подарка"-->
+              <div class="idea_gift">
+                <p class="text_idea">Идея для подарка</p>
+                <div class="convert">
+                  <img src="/static/png/konvert1.png" class="img-fluid" alt="конверт">
+                </div>
+              </div>
+
+              <!--Блок "Регистрация"-->
+              <div class="registration">
+                <p class="text_registration">Регистрация</p>
+                <p class="text_registration_desc">Просим гостей отметить своё присутсвие</p>
+              </div>
+              <div class="registration_forms">
+                <form action="#" class="registration_form">
+                    <div class="form_group">
+                      <input class="form_input" type="text" placeholder="Введите ФИО" id="name">
+                    </div>
+                    <div class="form_group">
+                      <input class="form_input" type="tel" placeholder="Введите номер телефона" id="telephone">
+                    </div>
+                    <div class="form_group">
+                      <input class="form_input" type="number" placeholder="Количество гостей" id="number">
+                    </div>
+                  <div class="button_div">
+                    <button class="button_form" type="submit">Отправить</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+        </div>
+  </body>
+</html>
+
+  

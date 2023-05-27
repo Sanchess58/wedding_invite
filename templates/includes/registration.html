@@ -1,0 +1,26 @@
+<div class="registration" data-aos="fade-right">
+    <p class="text_registration">Регистрация</p>
+    <p class="text_registration_desc">Просим гостей отметить своё присутсвие</p>
+  </div>
+  <div class="registration_forms" id="registration" data-aos="fade-left">
+    
+    <form class="registration_form">
+      
+      {{ form.hidden_tag() }}
+      <div class="text_registration_desc js-close invalid" id="error"><h1>Некорректный номер </h1></div>
+      <div class="text_registration js-close" id="thanks"><h1>Спасибо за регистрацию!</h1></div>
+        <div class="form_group">
+              {{ form.name(class="form_input") }}
+        </div>
+        <div class="form_group ">
+              {{ form.phone(class="form_input") }}
+        </div>
+        <button class="button_form addBtn" type="button" onclick="addbtn();">Добавить гостя</button>
+      <div class="button_div">
+        <button class="button_form" type="button" onclick="get_arr();">Отправить</button>
+      </div>
+      </form>   
+    </div>
+        
+    
+  </div>
