@@ -217,7 +217,8 @@ body {
 /* Блок "Регистрация" */
 .registration {
     width: 100%;
-
+    position: relative;
+    margin-top: 40%;
 }
 .text_registration {
     font-family: 'Dihjauti';
