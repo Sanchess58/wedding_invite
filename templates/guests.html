@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %} Гости {% endblock %}
+{% block content %}
+<div class="guests">
+    <h1>Всего гостей: {{ guests|length }}</h1>
+    {% for guest in guests %}
+        <div class="guest_element text_registration_desc">
+        <br>{{ guest }}</br> <a href="guest/{{guest.id}}/delete/">Удалить </a>
+        </div>
+    {% endfor %} 
+</div>
+{% endblock content %}

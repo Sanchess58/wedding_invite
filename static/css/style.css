@@ -313,7 +313,20 @@ body {
 .js-close {
     display: none;
 }
-
+.guests {
+    width: 100%;
+    max-width: 1920px;
+    text-align: center;
+}
+.guest_element {
+    width: 80%;
+    max-width: 500px;
+    border: 6px solid #001F38;
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-top: 10px;
+    font-size: 20px;
+}
 ::-webkit-input-placeholder {color:rgba(8, 0, 39, 0.25);}
 ::-moz-placeholder          {color:rgba(8, 0, 39, 0.25);}
 :-moz-placeholder           {color:rgba(8, 0, 39, 0.25);}
