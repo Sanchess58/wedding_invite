@@ -16,7 +16,7 @@ function get_arr() {
     onlyInputsName.forEach(input => {
         arr.push(input.value);
     });
-    if (!validatePhone(onlyInputPhone.value)){
+    if (!validatePhone(onlyInputPhone.value.trim())){
         is_good = false;
         jQuery('#error').removeClass('js-close');
         
@@ -27,7 +27,7 @@ function get_arr() {
             type: "POST",
             data : {
                 name: arr, 
-                phone: onlyInputPhone.value,
+                phone: onlyInputPhone.value.trim(),
             }, 
             success: function(dat) { 
                 error_or_thanks();
