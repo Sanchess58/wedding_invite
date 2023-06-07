@@ -3,6 +3,7 @@
 body {
     background-image: url(/static/png/background.png);
     font-family:'Roboto', 'Dihjauti', sans-serif;
+    margin: 0 auto;
 }
 
 .container {
