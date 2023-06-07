@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="signup" data-aos="fade-right">
+    <p class="text_registration">{{ text_sign_login }}</p>
+  </div>
+  <div class="registration_forms" id="registration" data-aos="fade-left">
+    <form class="signup_form", method="post">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <div class="alert alert-danger ">
+            {{ messages[0] }}
+        </div>
+        {% endif %}
+    {% endwith %}
+      {{ form.hidden_tag() }}
+        <div class="form_group">
+              {{ form.name(class="form_input") }}
+        </div>
+        <div class="form_group ">
+              {{ form.password(class="form_input") }}
+        </div>
+      <div class="button_div">
+        <button class="button_form" type="submit">{{ button }}</button>
+      </div>
+      </form>   
+    </div>
+        
+    
+  </div>
+{% endblock %}

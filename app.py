@@ -1,30 +1,44 @@
 import os
 
-from flask import Flask, redirect, render_template, request
+from flask import Flask, redirect, render_template, request, flash
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import FlaskForm
 from sqlalchemy_utils import PhoneNumberType
-from wtforms import StringField
-from wtforms.validators import DataRequired, Length
-
+from wtforms import StringField, PasswordField
+from wtforms.validators import DataRequired, Length 
+from flask_migrate import Migrate
+from flask_login import login_required, UserMixin, LoginManager, login_user
+from werkzeug.security import generate_password_hash, check_password_hash
 application = Flask(__name__)
 
-application.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///guest.db'
+application.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
 
 db = SQLAlchemy(application)
-
+migrate = Migrate(application, db)
 SECRET_KEY = os.urandom(32)
 application.config['SECRET_KEY'] = SECRET_KEY
-
+login_manager = LoginManager()
+login_manager.init_app(application)
+login_manager.login_view = '/'
 
 class Guest(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(150),  nullable=False)
     number = db.Column(PhoneNumberType(region="RU"), nullable=False)
-    is_kid = db.Column(db.Boolean)
 
     def __repr__(self):
         return f'{self.name} | {self.number}'
+
+
+class User(UserMixin, db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(150),  nullable=False)
+    password = db.Column(db.String(100))
+
+
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(int(user_id))
 
 
 class GuestForm(FlaskForm):
@@ -37,6 +51,16 @@ class GuestForm(FlaskForm):
         render_kw={"placeholder": "Введите номер телефона"}
     )
 
+class UserForm(FlaskForm):
+    name = StringField(
+        validators=[Length(max=150)],
+        render_kw={"placeholder": "Введите username"}
+    )
+    password = PasswordField(
+        validators=[DataRequired(), Length(min=8)],
+        render_kw={"placeholder": "Введите пароль"}
+    )
+
 
 @application.route('/', methods=['POST', 'GET'])
 def main():
@@ -46,19 +70,54 @@ def main():
         phone = request.form.getlist('phone')
 
         for name in names:
-            guest = Guest(name=name, number=phone[0], is_kid=False)
+            guest = Guest(name=name, number=phone[0])
             db.session.add(guest)
             db.session.commit()
     return render_template('test2.html', form=form)
 
 
+@application.route("/signup", methods=['GET', 'POST'])
+def signup():
+    button = "Зарегистрироваться"
+    text_sign_login = "Регистрация"
+    form = UserForm()
+    if request.method == 'POST':
+        name = request.form.get('name')
+        password = request.form.get('password')
+        new_user = User(name=name, password=generate_password_hash(password, method='scrypt'))
+        db.session.add(new_user)
+        db.session.commit()
+        return redirect('/')
+    return render_template('signup.html', form=form, button=button, text_sign_login=text_sign_login)
+
+
+
+@application.route('/login', methods=['POST', 'GET'])
+def login():
+    button = "Войти"
+    text_sign_login = "Авторизация"
+    form = UserForm()
+    if request.method == "POST":
+        name = request.form.get('name')
+        password = request.form.get('password')
+
+        user = User.query.filter_by(name=name).first()
+        if not user or not check_password_hash(user.password, password):
+            flash("Введены неверные данные")
+            return redirect('/login') 
+        login_user(user, remember=True)
+    return render_template('signup.html', form=form, button=button, text_sign_login=text_sign_login)
+
+
 @application.route("/get_guests", methods=['GET'])
+@login_required
 def get_guests():
     guests = Guest.query.all()
     return render_template('guests.html', guests=guests)
 
 
 @application.route("/guest/<int:id>/delete/")
+@login_required
 def delete_guest(id):
     guest_del = Guest.query.get_or_404(id)
     try:
