@@ -5,7 +5,9 @@ body {
     font-family:'Roboto', 'Dihjauti', sans-serif;
     margin: 0 auto;
 }
-
+body, html {
+    overflow-x: hidden;
+  }
 .container {
     width: 100%;
     max-width: 1400px;
