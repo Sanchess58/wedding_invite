@@ -5,20 +5,20 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import FlaskForm
 from sqlalchemy_utils import PhoneNumberType
 from wtforms import StringField, PasswordField
-from wtforms.validators import DataRequired, Length 
-from flask_migrate import Migrate
+from wtforms.validators import DataRequired, Length
 from flask_login import login_required, UserMixin, LoginManager, login_user
 from werkzeug.security import generate_password_hash, check_password_hash
-application = Flask(__name__)
 
-application.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
+app = Flask(__name__)
 
-db = SQLAlchemy(application)
-migrate = Migrate(application, db)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///guest.db'
+
+db = SQLAlchemy(app)
+
 SECRET_KEY = os.urandom(32)
-application.config['SECRET_KEY'] = SECRET_KEY
+app.config['SECRET_KEY'] = SECRET_KEY
 login_manager = LoginManager()
-login_manager.init_app(application)
+login_manager.init_app(app)
 login_manager.login_view = '/'
 
 class Guest(db.Model):
@@ -62,7 +62,7 @@ class UserForm(FlaskForm):
     )
 
 
-@application.route('/', methods=['POST', 'GET'])
+@app.route('/', methods=['POST', 'GET'])
 def main():
     form = GuestForm()
     if request.method == 'POST':
@@ -76,7 +76,7 @@ def main():
     return render_template('test2.html', form=form)
 
 
-@application.route("/signup", methods=['GET', 'POST'])
+@app.route("/signup", methods=['GET', 'POST'])
 def signup():
     button = "Зарегистрироваться"
     text_sign_login = "Регистрация"
@@ -92,7 +92,7 @@ def signup():
 
 
 
-@application.route('/login', methods=['POST', 'GET'])
+@app.route('/login', methods=['POST', 'GET'])
 def login():
     button = "Войти"
     text_sign_login = "Авторизация"
@@ -104,19 +104,20 @@ def login():
         user = User.query.filter_by(name=name).first()
         if not user or not check_password_hash(user.password, password):
             flash("Введены неверные данные")
-            return redirect('/login') 
+            return redirect('/login')
         login_user(user, remember=True)
+        return redirect('/get_guests')
     return render_template('signup.html', form=form, button=button, text_sign_login=text_sign_login)
 
 
-@application.route("/get_guests", methods=['GET'])
+@app.route("/get_guests", methods=['GET'])
 @login_required
 def get_guests():
     guests = Guest.query.all()
     return render_template('guests.html', guests=guests)
 
 
-@application.route("/guest/<int:id>/delete/")
+@app.route("/guest/<int:id>/delete/")
 @login_required
 def delete_guest(id):
     guest_del = Guest.query.get_or_404(id)
@@ -129,4 +130,4 @@ def delete_guest(id):
 
 
 if __name__ == "__main__":
-    application.run(debug=True)
+    app.run(debug=True)
